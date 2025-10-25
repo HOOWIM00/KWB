@@ -1,14 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">  
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>RAAK Achterbos - www.raakachterbos.be</title>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-    </head>
-    <body>
-        <?php
-        // Welkom op de website
-        echo "Hallo, welkom bij RAAK Achterbos!";
-        ?>
-    </body>
-</html>
+<?php include('includes/header.php'); ?>
+<main>
+  <section class="hero">
+    <h1>Welkom bij RAAK Achterbos</h1>
+    <p>Een warme gemeenschap in beweging</p>
+  </section>
+
+  <section class="intro">
+    <h2>Wat we doen</h2>
+    <p>RAAK Achterbos organiseert activiteiten voor jong en oud, met focus op verbinding en plezier.</p>
+  </section>
+</main>
+<?php include('includes/footer.php'); ?>
