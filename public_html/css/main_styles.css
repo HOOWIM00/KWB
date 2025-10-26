@@ -2,7 +2,6 @@ html, body {
   height: 100%;
   margin: 0;
   height: 100vh;
-  overflow: hidden;
   box-sizing: border-box;
   padding: 0;
 }
@@ -13,31 +12,6 @@ body {
   background-color: #f9f9f9;
   color: #333;
   padding: 0 0 150px 0; /* top left bottom right */
-}
-
-.topnav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ebe24c;
-  padding: 10px 0;
-  z-index: 1000;
-}
-
-.topnav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-.topnav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
 }
 
 main {
@@ -87,7 +61,6 @@ iframe {
 }
 
 .iframe-subnav {
-  position: fixed;
   top: 60px;
   left: 0;
   width: 100%;
@@ -153,4 +126,14 @@ footer {
   padding: 10px;
   font-weight: bold;
   cursor: pointer;
+}
+
+#bestuur,
+#contact {
+  scroll-margin-top: 80px; /* hoogte van je vaste header */
+}
+
+img{
+  max-width: 100%;
+  height: auto;
 }

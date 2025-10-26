@@ -11,10 +11,10 @@
   <header class="topnav">
     <nav>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">Over ons</a></li>
-        <li><a href="contact.php">Contact</a></li>
-        <li><a href="activities.php">Activiteiten</a></li>
+        <li><a href="iframes/home.php" target="main">Home</a></li>
+        <li><a href="iframes/about.php" target="main">Over ons</a></li>
+        <li><a href="iframes/contact.php" target="main">Contact</a></li>
+        <li><a href="iframes/activities.php" target="main">Activiteiten</a></li>
       </ul>
     </nav>
   </header>
