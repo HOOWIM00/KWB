@@ -2,12 +2,12 @@
   // Editor instellingen
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.wordWrap": "on",
   
   // Bestanden
   "files.exclude": {
-    "_test": true,
+    "**/_test/**": true,
     "**/.git": true,
     "**/.DS_Store": true,
     "**/node_modules": true
