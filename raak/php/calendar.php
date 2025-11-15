@@ -42,6 +42,23 @@ try {
     
     // Format de data voor React
     $formattedActivities = array_map(function($activity) {
+        // Zoek naar foto in activities folder
+        $dateFormatted = str_replace('-', '', $activity['date']); // yyyymmdd
+        $nameFormatted = str_replace(' ', '', $activity['name']); // zonder spaties
+        $baseName = $dateFormatted . '_' . $nameFormatted;
+        
+        $photoExtension = null;
+        $activitiesDir = __DIR__ . '/../activities/';
+        
+        // Check verschillende extensies
+        $extensions = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG', 'gif', 'webp'];
+        foreach ($extensions as $ext) {
+            if (file_exists($activitiesDir . $baseName . '.' . $ext)) {
+                $photoExtension = $ext;
+                break;
+            }
+        }
+        
         return [
             'id' => (int)$activity['id'],
             'date' => $activity['date'],
@@ -52,7 +69,9 @@ try {
             'comment' => $activity['comment'],
             'info' => $activity['info'],
             'status' => $activity['status'],
-            'daysAgo' => (int)$activity['days_ago']
+            'daysAgo' => (int)$activity['days_ago'],
+            'photoExtension' => $photoExtension,
+            'photoFilename' => $photoExtension ? $baseName . '.' . $photoExtension : null
         ];
     }, $activities);
     

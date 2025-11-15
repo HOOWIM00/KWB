@@ -64,9 +64,13 @@ upload_dir($conn, __DIR__ . '/build', 'raak', $file_count, $dir_count);
 
 echo "\nUploaden PHP...\n";
 @ftp_mkdir($conn, 'raak/php');
-if (file_exists(__DIR__ . '/php/calendar.php')) {
-    echo "Upload: calendar.php ... ";
-    if (@ftp_put($conn, 'raak/php/calendar.php', __DIR__ . '/php/calendar.php', FTP_ASCII)) {
+
+// Upload alle PHP bestanden in php folder
+$phpFiles = glob(__DIR__ . '/php/*.php');
+foreach ($phpFiles as $phpFile) {
+    $filename = basename($phpFile);
+    echo "Upload: $filename ... ";
+    if (@ftp_put($conn, 'raak/php/' . $filename, $phpFile, FTP_ASCII)) {
         echo "✓\n";
         $file_count++;
     } else {
