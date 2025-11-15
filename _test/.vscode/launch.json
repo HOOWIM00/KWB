@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Open public_html in browser",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:8000",
+      "preLaunchTask": "start-servers",
+      "webRoot": "${workspaceFolder}/public_html"
+    },
+    {
+      "name": "Open react_html in browser",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}/react_html"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Start both and open browsers",
+      "configurations": [
+        "Open public_html in browser",
+        "Open react_html in browser"
+      ]
+    }
+  ]
+}
