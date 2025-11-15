@@ -1,0 +1,47 @@
+{
+  // Editor instellingen
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": false,
+  "editor.wordWrap": "on",
+  
+  // Bestanden
+  "files.exclude": {
+    "_test": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  "files.associations": {
+    "*.php": "php",
+    "*.jsx": "javascriptreact"
+  },
+  
+  // PHP instellingen
+  "php.validate.enable": true,
+  "php.validate.run": "onSave",
+  
+  // HTML/CSS
+  "html.format.indentInnerHtml": true,
+  "css.lint.unknownAtRules": "ignore",
+  
+  // JavaScript/React
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  
+  // Formatting
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
+}
