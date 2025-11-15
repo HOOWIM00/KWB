@@ -7,10 +7,11 @@
   
   // Bestanden
   "files.exclude": {
-    "**/_test/**": true,
     "**/.git": true,
     "**/.DS_Store": true,
-    "**/node_modules": true
+    "**/node_modules": true,
+    //"**/testcodes": true,
+    //"**/build": true
   },
   "files.associations": {
     "*.php": "php",
