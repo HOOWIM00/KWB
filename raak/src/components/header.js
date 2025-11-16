@@ -1,5 +1,4 @@
 // Header Component
-// TODO: media toevoegen, hieronder moet foto's en maandblaadjes komen
 function Header({ currentPage, setCurrentPage }) {
   return (
     <header className="topnav">

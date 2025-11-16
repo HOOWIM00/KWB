@@ -1,4 +1,6 @@
 // About Page Component
+// TODO: tekst laten aanpassen door Gets?
+// TODO: foto's toevoegen in tekst
 function AboutPage() {
   return (
     <section className="page">

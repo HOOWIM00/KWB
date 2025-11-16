@@ -1,25 +1,36 @@
 import React, { useState } from 'react';
-
+// TODO: testen versturen mail naar raak
+// TODO: knop versturen uitschakelen als de velden niet ingevuld zijn
 // Contact Page Component
 function ContactPage() {
-  const [formData, setFormData] = useState({ naam: '', email: '', bericht: '' });
+  const [formData, setFormData] = useState({ naam: '', email: '', onderwerp: '', bericht: '' });
   const [submitted, setSubmitted] = useState(false);
   const [activeSection, setActiveSection] = useState('bestuur');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Send to PHP backend
-    const response = await fetch('../public_html/api/contact.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
+    try {
+      // Send to PHP backend
+      const response = await fetch(`${process.env.PUBLIC_URL}/php/contact.php`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
-    if (response.ok) {
-      setSubmitted(true);
-      setFormData({ naam: '', email: '', bericht: '' });
-      setTimeout(() => setSubmitted(false), 5000);
+      const data = await response.json();
+      console.log('Response:', data); // DEBUG
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+        setFormData({ naam: '', email: '', onderwerp: '', bericht: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert('Er ging iets mis: ' + (data.error || 'Onbekende fout') + (data.debug ? '\n\nDebug: ' + data.debug : ''));
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+      alert('Netwerkfout: ' + err.message);
     }
   };
 
@@ -60,10 +71,18 @@ function ContactPage() {
             <label>E-mail:</label>
             <input type="email" name="email" value={formData.email} onChange={handleChange} required />
 
+            <label>Onderwerp</label>
+            <input name="onderwerp" value={formData.onderwerp} onChange={handleChange} required />
+
             <label>Bericht:</label>
             <textarea name="bericht" rows="5" value={formData.bericht} onChange={handleChange} required></textarea>
 
-            <button type="submit">Verstuur</button>
+            <button
+              type="submit"
+              disabled={!formData.naam || !formData.email || !formData.onderwerp || !formData.bericht}
+            >
+              Verzenden
+            </button>
           </form>
           {submitted && (
             <div className="success-message">

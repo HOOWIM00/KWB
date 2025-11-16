@@ -3,17 +3,10 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 
-// Database configuratie voor one.com
-$host = 'raakachterbos.be.mysql';  // one.com MySQL server
-$dbname = 'raakachterbos_beraak';  // Database naam
-$username = 'raakachterbos_beraak';   // Database username
-$password = '15chapels@bos';       // Database wachtwoord
+// Include database connectie
+require_once __DIR__ . '/db_connect.php';
 
 try {
-    // Database connectie
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
     // Haal activiteiten op, gesorteerd op datum (nieuwste eerst)
     // Inclusief activiteiten van maximaal 1 maand geleden
     $stmt = $pdo->prepare("
