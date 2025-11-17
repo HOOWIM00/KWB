@@ -1,0 +1,16 @@
+# RAAK Achterbos - Robots.txt
+# https://www.robotstxt.org/robotstxt.html
+
+# Alle zoekmachines zijn welkom
+User-agent: *
+
+# Sta alles toe behalve admin/private folders (als je die later toevoegt)
+Disallow: /admin/
+Disallow: /private/
+
+# TODO: Indien sitemap van toepassing is
+# Sitemap voor betere SEO (voeg dit toe als je een sitemap hebt)
+# Sitemap: https://raakachterbos.be/sitemap.xml
+
+# Crawl-delay (optioneel, alleen als server overbelast raakt)
+# Crawl-delay: 10

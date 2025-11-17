@@ -1,0 +1,23 @@
+{
+  "short_name": "RAAK",
+  "name": "RAAK Achterbos",
+  "description": "Een warme gemeenschap in beweging",
+  "icons": [
+    {
+      "src": "images/raak_druppel_001.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ebe24c",
+  "background_color": "#f9f9f9",
+  "orientation": "portrait-primary",
+  "categories": [
+    "lifestyle",
+    "social"
+  ],
+  "lang": "nl-BE"
+}
